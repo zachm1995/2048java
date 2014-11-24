@@ -101,6 +101,10 @@ public class TwoDimensional2048
             newarray[row][col] = b[row][col];
          }
       }
+      if(b[0].length == newarray.length)
+      {
+         return newarray;
+      }
       return b;
    }
    public static boolean validateValue(int value, int maxPowerOfTwo)

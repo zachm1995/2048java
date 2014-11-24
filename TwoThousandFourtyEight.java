@@ -47,7 +47,16 @@ public class TwoThousandFourtyEight
                      break;
                   case 512:
                      tempscore += 512+256+128+64+32+16+8+4+2;
-                     break;                 
+                     break;
+                  case 1024:
+                     tempscore += 1024+512+256+128+64+32+16+8+4+2;
+                     break;
+                  case 2048:
+                     tempscore += 2048+1024+512+256+128+64+32+16+8+4+2;
+                     break;
+                  case 4096:
+                     tempscore += 4096+2048+1024+512+254+128+64+32+16+8+4+2;
+                     break;                           
                }
             }
          }   
@@ -87,19 +96,39 @@ public class TwoThousandFourtyEight
    }
    public boolean up()
    {
-      
+      board = TwoDimensional2048.up();
+      TwoDimensional2048.addNewValue();
+      if (TwoDimensional2048.numUnoccupied == 0)
+      {
+         return false;
+      }
    }
    public boolean down()
    {
-      
+      board = TwoDimensional2048.down();
+      TwoDimensional2048.addNewValue();
+      if (TwoDimensional2048.numUnoccupied == 0)
+      {
+         return false;
+      }
    }
    public boolean left()
    {
-      
+      board = TwoDimensional2048.left();
+      TwoDimensional2048.addNewValue();
+      if (TwoDimensional2048.numUnoccupied == 0)
+      {
+         return false;
+      }
    }
    public boolean right()
    {
-      
+      board = TwoDimensional2048.right();
+      TwoDimensional2048.addNewValue();
+      if (TwoDimensional2048.numUnoccupied == 0)
+      {
+         return false;
+      }
    }
    public int[][] getBoard()
    {

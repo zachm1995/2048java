@@ -35,6 +35,9 @@ public class Rnd2048 {
 		y = z;
 		z = w;
 		w = w^(w>>19)^t^(t>>8);
+		assert(ceil > 0);
 		return w % ceil;
+
+		//return (int)(Math.random() * ceil);
 	}
 }

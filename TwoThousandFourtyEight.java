@@ -1,7 +1,6 @@
 import java.util.*;
 public class TwoThousandFourtyEight
 {
-   private int score;
    private int hightile;
    private int[][] board;
    public TwoThousandFourtyEight()
@@ -61,8 +60,7 @@ public class TwoThousandFourtyEight
             }
          }   
       }
-      score = tempscore;
-      return score;
+      return tempscore;
    }
    public int getHighestTile()
    {

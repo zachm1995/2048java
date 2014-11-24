@@ -15,9 +15,9 @@ public class TwoThousandFourtyEight
    {
       int tempscore = 0;
       {
-         for(int row = 0; row < board.length(); row++)
+         for(int row = 0; row < board.length; row++)
          {
-            for(int col = 0; col < board[row].length(); col++)
+            for(int col = 0; col < board[row].length; col++)
             {
                switch(board[row][col])
                {
@@ -58,9 +58,9 @@ public class TwoThousandFourtyEight
    public int getHighestTile()
    {
       int temp = 0;
-      for(int row = 0; row < board.length(); row++)
+      for(int row = 0; row < board.length; row++)
       {
-         for(int col = 0; col < board[row].length(); col++)
+         for(int col = 0; col < board[row].length; col++)
          {
             if (board[row][col] > temp)
             {
@@ -74,7 +74,7 @@ public class TwoThousandFourtyEight
    public TwoThousandFourtyEight copy()
    {
       TwoThousandFourtyEight copy = new TwoThousandFourtyEight();
-      int[][] copyboard = new int[board.length()][board[0].length()];
+      int[][] copyboard = new int[this.board.length][this.board[0].length];
       for (int row = 0; row < board.length; row++)
       {
          for(int col = 0; col < board[row].length; col++)

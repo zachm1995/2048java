@@ -96,42 +96,54 @@ public class TwoThousandFourtyEight
    }
    public boolean up()
    {
-      board = TwoDimensional2048.up();
-      TwoDimensional2048.addNewValue();
-      if (TwoDimensional2048.numUnoccupied == 0)
+      board = TwoDimensional2048.up(board);
+      TwoDimensional2048.addNewValue(board);
+      if (TwoDimensional2048.numUnoccupied(board) == 0)
       {
          return false;
       }
+      return true;
    }
    public boolean down()
    {
-      board = TwoDimensional2048.down();
-      TwoDimensional2048.addNewValue();
-      if (TwoDimensional2048.numUnoccupied == 0)
+      board = TwoDimensional2048.down(board);
+      TwoDimensional2048.addNewValue(board);
+      if (TwoDimensional2048.numUnoccupied(board) == 0)
       {
          return false;
       }
+      return true;
    }
    public boolean left()
    {
-      board = TwoDimensional2048.left();
-      TwoDimensional2048.addNewValue();
-      if (TwoDimensional2048.numUnoccupied == 0)
+      board = TwoDimensional2048.left(board);
+      TwoDimensional2048.addNewValue(board);
+      if (TwoDimensional2048.numUnoccupied(board) == 0)
       {
          return false;
       }
+      return true;
    }
    public boolean right()
    {
-      board = TwoDimensional2048.right();
-      TwoDimensional2048.addNewValue();
-      if (TwoDimensional2048.numUnoccupied == 0)
+      board = TwoDimensional2048.right(board);
+      TwoDimensional2048.addNewValue(board);
+      if (TwoDimensional2048.numUnoccupied(board) == 0)
       {
          return false;
       }
+      return true;
    }
    public int[][] getBoard()
    {
-      
+      int[][] copyboard = new int[this.board.length][this.board[0].length];
+      for (int row = 0; row < board.length; row++)
+      {
+         for(int col = 0; col < board[row].length; col++)
+         {
+            copyboard[row][col] = board[row][col];
+         }
+      }
+      return copyboard;
    }
 }

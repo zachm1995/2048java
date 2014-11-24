@@ -4,6 +4,18 @@ public class TwoThousandFourtyEight
    private int hightile;
    public int getScore()
    {
+      int tempscore = 0;
+      for(int row = 0; row < board.length(); row++)
+      {
+         for(int col = 0; col < board[row].length(); col++)
+         {
+            if(board[row][col] > tempscore)
+            {
+               tempscore = board[row][col];
+            }
+         }
+      }
+      score = tempscore;
       return score;
    }
    public int getHighestTile()

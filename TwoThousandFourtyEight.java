@@ -74,10 +74,13 @@ public class TwoThousandFourtyEight
    public TwoThousandFourtyEight copy()
    {
       TwoThousandFourtyEight copy = new TwoThousandFourtyEight();
-      int[][] copyboard = new int[board.length][];
-      for (int i = 0; i < board.length; i++)
+      int[][] copyboard = new int[board.length()][board[0].length()];
+      for (int row = 0; row < board.length; row++)
       {
-        copyboard[i] = Arrays.copyOf(board[i], board[i].length);
+         for(int col = 0; col < board[row].length; col++)
+         {
+            copyboard[row][col] = board[row][col];
+         }
       }
       copy.board = copyboard;
       return copy;

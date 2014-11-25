@@ -92,7 +92,7 @@ public class TwoDimensional2048
    {
       for(int row = 0; row < b.length; row++)
       {
-         b[row] = OneDimensional2048.combineLeft(b[row]);
+         OneDimensional2048.combineLeft(b[row]);
       }
       return b;
    }

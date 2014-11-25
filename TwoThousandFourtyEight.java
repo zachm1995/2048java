@@ -18,47 +18,16 @@ public class TwoThousandFourtyEight
          {
             for(int col = 0; col < board[row].length; col++)
             {
-               switch(board[row][col])
+               for(int i = 2; i <= board[row][col];)
                {
-                  case 2:
-                     tempscore += 2;
-                     break;
-                  case 4:
-                     tempscore += 4+2;
-                     break;
-                  case 8:
-                     tempscore += 8+4+2;
-                     break;
-                  case 16:
-                     tempscore += 16+8+4+2;
-                     break;
-                  case 32:
-                     tempscore += 32+16+8+4+2;
-                     break;
-                  case 64:
-                     tempscore += 64+32+16+8+4+2;
-                     break;
-                  case 128:
-                     tempscore += 128+64+32+16+8+4+2;
-                     break;
-                  case 256:
-                     tempscore += 256+128+64+32+16+8+4+2;
-                     break;
-                  case 512:
-                     tempscore += 512+256+128+64+32+16+8+4+2;
-                     break;
-                  case 1024:
-                     tempscore += 1024+512+256+128+64+32+16+8+4+2;
-                     break;
-                  case 2048:
-                     tempscore += 2048+1024+512+256+128+64+32+16+8+4+2;
-                     break;
-                  case 4096:
-                     tempscore += 4096+2048+1024+512+254+128+64+32+16+8+4+2;
-                     break;                           
+                  if(board[row][col] > 0)
+                  {
+                     tempscore += i;
+                  }
+                  i = i*2;
                }
             }
-         }   
+         }
       }
       return tempscore;
    }
@@ -144,4 +113,15 @@ public class TwoThousandFourtyEight
       }
       return copyboard;
    }
+   public void printBoard()
+   {
+      for(int row = 0; row < board.length; row++)
+      {
+         for(int col = 0; col < board[0].length; col++)
+         {
+            System.out.print(board[row][col]);
+         }
+         System.out.println();
+      }
+   }  
 }

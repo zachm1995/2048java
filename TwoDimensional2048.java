@@ -38,6 +38,7 @@ public class TwoDimensional2048
       }
       return identical;
    }
+   
    public static int numUnoccupied(int[][] b)
    {
       int zerocount = 0;
@@ -53,6 +54,7 @@ public class TwoDimensional2048
       }
       return zerocount;
    }
+   
    public static int[] randCoord(int[][] b, int offset)
    {
       int zerocount = 0;
@@ -75,37 +77,52 @@ public class TwoDimensional2048
       }
       return coord;
    }
+   
    public static boolean addNewValue(int[][] b)
    {
-      int val = Rnd2048.randValue();
-      int zerocount = numUnoccupied(b);
-      int offset = Rnd2048.randValue();
-      int[] coord = randCoord(b, offset);
+      Rnd2048.randValue();
+      int offset = Rnd2048.randNum(numUnoccupied(b));
+      int[] a = randCoord(b,offset);
+      b[a[0]][a[1]] = Rnd2048.randValue();
       return true;
+     
    }
+   
    public static int[][] combineLeft(int[][] b)
    {
       for(int row = 0; row < b.length; row++)
       {
-         b[row] = combineLeft2(b[row]);
+         b[row] = OneDimensional2048.combineLeft(b[row]);
       }
       return b;
    }
    public static int[][] rotateLeft(int[][] b)
    {
-      int[][] newarray = new int[b.length][b.length];
+      int[][] temparray = new int[b.length][b[0].length];
       for (int row = 0; row < b.length; row++)
       {
          for (int col = 0; col < b[row].length; col++)
          {
-            newarray[row][col] = b[row][col];
+            temparray[row][col] = b[row][col];
          }
       }
-      if(b[0].length == newarray.length)
+      int[][] temparray2 = new int[temparray.length][temparray[0].length];
+      for(int row = 0; row < temparray.length; row++)
       {
-         return newarray;
+         for(int col = 0; col <temparray[row].length; col++)
+         {
+            temparray2[row][col] = temparray[temparray.length-row-1][temparray[0].length-col-1];
+         }   
       }
-      return b;
+      int[][] temparray3 = new int[temparray.length][temparray[0].length];
+      for (int row = 0; row < temparray3.length; row++)
+      {
+         for(int col = 0; col < temparray3[0].length; col++)
+         {
+            temparray3[row][col] = temparray2[row][temparray2[0].length - col - 1];
+         }
+      }
+      return temparray3;
    }
    public static boolean validateValue(int value, int maxPowerOfTwo)
    {
@@ -126,6 +143,7 @@ public class TwoDimensional2048
       }
       return isValid;
    }
+   
    public static int[][] left(int[][] b)
    {
       combineLeft(b);
@@ -138,6 +156,8 @@ public class TwoDimensional2048
       combineLeft(b);
       rotateLeft(b);
       rotateLeft(b);
+      rotateLeft(b);
+      
       return b;
    }
    public static int[][] up(int[][] b)
@@ -147,6 +167,8 @@ public class TwoDimensional2048
       rotateLeft(b);
       rotateLeft(b);
       rotateLeft(b);
+      rotateLeft(b);
+      
       return b;
    }
    public static int[][] down(int[][] b)

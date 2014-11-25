@@ -146,38 +146,38 @@ public class TwoDimensional2048
    
    public static int[][] left(int[][] b)
    {
-      combineLeft(b);
+      b = combineLeft(b);
       return b;
    }
    public static int[][] right(int[][] b)
    {
-      rotateLeft(b);
-      rotateLeft(b);
-      combineLeft(b);
-      rotateLeft(b);
-      rotateLeft(b);
-      rotateLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
+      b = combineLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
       
       return b;
    }
    public static int[][] up(int[][] b)
    {
-      rotateLeft(b);
-      combineLeft(b);
-      rotateLeft(b);
-      rotateLeft(b);
-      rotateLeft(b);
-      rotateLeft(b);
+      b = rotateLeft(b);
+      b = combineLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
       
       return b;
    }
    public static int[][] down(int[][] b)
    {
-      rotateLeft(b);
-      rotateLeft(b);
-      rotateLeft(b);
-      combineLeft(b);
-      rotateLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
+      b = rotateLeft(b);
+      b = combineLeft(b);
+      b = rotateLeft(b);
       return b;
    }
    public static boolean validateRow(int[] row)

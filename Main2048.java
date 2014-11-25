@@ -2,35 +2,40 @@ public class Main2048 {
 	public static void main(String[] args) {
 		TwoThousandFourtyEight t1 = new TwoThousandFourtyEight(4, 4);
 		TwoThousandFourtyEight t2;
-
+      t1.printBoard();
+      System.out.println();
 		t1.up();
 		// 0	0	2	0	
 		// 0	0	0	0	
 		// 0	0	2	0	
 		// 0	0	0	0	
 		// Score: 4
-
+      t1.printBoard();
+      System.out.println();
 		t1.right();
 		// 0	0	0	2	
 		// 0	2	0	0	
 		// 0	0	0	2	
 		// 0	0	0	0	
 		// Score: 6
-
+      t1.printBoard();
+      System.out.println();
 		t1.down();
 		// 2	0	0	0	
 		// 0	0	0	0	
 		// 0	0	0	0	
 		// 0	2	0	4	
 		// Score: 10
-
+      t1.printBoard();
+      System.out.println();
 		t1.left();
 		// 2	0	0	0	
 		// 0	0	0	0	
 		// 0	0	2	0	
 		// 2	4	0	0	
 		// Score: 12		
-		
+      t1.printBoard();
+      System.out.println();		
 		for (int i = 0 ; i < 16 ; i++) {
 			if (!t1.up() || !t1.left()) {
 				break;
